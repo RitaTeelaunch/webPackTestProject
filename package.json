@@ -1,6 +1,6 @@
 {
   "name": "webpack-test-project-rita",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "description": " create npm package related to github for test",
   "main": "/dist/index.js",
   "types": "dist/index.d.ts",

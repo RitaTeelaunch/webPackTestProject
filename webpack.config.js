@@ -6,7 +6,7 @@ module.exports = {
         filename: 'index.js',
         path: path.resolve(__dirname, 'dist'),
         library: {
-            name: 'webPackTestProject',
+            name: 'webpack-test-project-rita',
             type: 'umd',
         },
         clean: true,
