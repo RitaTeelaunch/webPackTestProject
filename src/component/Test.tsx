@@ -11,27 +11,29 @@ const Test: React.FC  = () => {
 
     return (
         <div
-            className={styles.container}
+            // className={styles.container}
         >
             <p> Welcome </p>
-            <div className={styles.inputGroup}>
+            <div
+                // className={styles.inputGroup}
+            >
                 <input
                     type="text"
                     placeholder="First Name"
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
-                    className={styles.input}
+                    // className={styles.input}
                 />
                 <input
                     type="text"
                     placeholder="Last Name"
                     value={lastName}
                     onChange={(e) => setLastName(e.target.value)}
-                    className={styles.input}
+                    // className={styles.input}
                 />
             </div>
             <button
-                className={`${styles.button} ${isClicked ? styles.buttonClicked : ''}`}
+                // className={`${styles.button} ${isClicked ? styles.buttonClicked : ''}`}
                 onClick={handleButtonClick}
             >
                 {isClicked ? 'Clicked!' : 'Click Me'}
