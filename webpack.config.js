@@ -8,7 +8,8 @@ module.exports = {
         library: {
             name: 'webPackTestProject',
             type: 'umd',
-        }
+        },
+        clean: true,
     },
     module: {
         rules: [
