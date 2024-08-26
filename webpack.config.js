@@ -29,7 +29,7 @@ module.exports = {
         extensions: ['.tsx', '.ts', '.js'],
     },
     output: {
-        filename: './dist/index.js',
+        filename: 'index.js',
         path: path.resolve(__dirname, 'dist'),
         library: {
             name: 'webPackTestProject',
