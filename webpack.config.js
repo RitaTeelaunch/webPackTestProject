@@ -5,9 +5,12 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.tsx?$/,
+                test: /\.(js|jsx|ts|tsx)?$/,
                 // use: 'ts-loader',
-                use: 'babel-loader',
+                // use: 'babel-loader',
+                use: {
+                    loader: 'babel-loader',
+                },
                 exclude: /node_modules/,
             },
             {
@@ -26,7 +29,7 @@ module.exports = {
         ],
     },
     resolve: {
-        extensions: ['.tsx', '.ts', '.js'],
+        extensions: ['.tsx', '.ts', '.js', '.jsx'],
     },
     output: {
         filename: 'index.js',
