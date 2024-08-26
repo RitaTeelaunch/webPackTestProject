@@ -1,3 +1,3 @@
 import React from 'react';
-declare const Test: () => React.JSX.Element;
+declare const Test: React.FC;
 export default Test;
