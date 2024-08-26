@@ -10,7 +10,7 @@ const Test: React.FC  = () => {
     };
 
     return (
-        <div style={{display:"flex", flexDirection:"column",justifyContent:"start", marginBottom:"50px", gap:"50px"}}
+        <div style={{display:"flex", flexDirection:"row",justifyContent:"space-between", marginBottom:"50px", gap:"50px"}}
             // className={styles.container}
         >
             <p> Welcome </p>
