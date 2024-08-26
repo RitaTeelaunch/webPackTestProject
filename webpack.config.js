@@ -2,6 +2,14 @@ const path = require('path');
 
 module.exports = {
     entry: './src/index.ts',
+    output: {
+        filename: 'index.js',
+        path: path.resolve(__dirname, 'dist'),
+        library: {
+            name: 'webPackTestProject',
+            type: 'umd',
+        }
+    },
     module: {
         rules: [
             {
@@ -25,19 +33,24 @@ module.exports = {
                     },
                     ],
                 exclude: /node_modules/,
-            }
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                ],
+                exclude: /\.module\.css$/,
+            },
         ],
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.js', '.jsx'],
     },
-    output: {
-        filename: 'index.js',
-        path: path.resolve(__dirname, 'dist'),
-        library: {
-            name: 'webPackTestProject',
-            type: 'umd',
-        }
+    devServer: {
+        static: path.resolve(__dirname, 'dist'),
+        compress: true,
+        port: 9000,
     },
     mode: 'development',
     externals: {
