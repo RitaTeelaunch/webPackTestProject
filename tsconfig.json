@@ -1,30 +1,30 @@
 {
-//  "compilerOptions": {
-//    "declaration": true,
-//    "outDir": "./dist/",
-//    "sourceMap": true,
-//    "noImplicitAny": true,
-//    "module": "es6",
-//    "target": "es5",
-//    "jsx": "react",
-//    "allowJs": true,
-//    "moduleResolution": "node",
-//    "allowSyntheticDefaultImports": true,
-//    "baseUrl": "./",
-//    "paths": {
-//      "webpack-test-project-rita/*": ["node_modules/webpack-test-project-rita/*"]
-//    }
-//  }
   "compilerOptions": {
-    "target": "ES6",
-    "module": "ESNext",
+    "declaration": true,
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "es6",
+    "target": "es5",
     "jsx": "react",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "allowSyntheticDefaultImports": true
-  },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist"]
+    "allowJs": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./",
+    "paths": {
+      "webpack-test-project-rita/*": ["node_modules/webpack-test-project-rita/*"]
+    }
+  }
+//  "compilerOptions": {
+//    "target": "ES6",
+//    "module": "ESNext",
+//    "jsx": "react",
+//    "strict": true,
+//    "esModuleInterop": true,
+//    "skipLibCheck": true,
+//    "forceConsistentCasingInFileNames": true,
+//    "allowSyntheticDefaultImports": true
+//  },
+//  "include": ["src/**/*"],
+//  "exclude": ["node_modules", "dist"]
 }

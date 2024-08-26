@@ -1,5 +1,6 @@
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const nodeExternals = require("webpack-node-externals");
 module.exports = {
     entry: './src/index.ts',
     output: {
@@ -14,48 +15,72 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(ts|tsx)$/,
+                test: /\.(ts|tsx)?$/,
                 // use: 'ts-loader',
                 // use: 'babel-loader',
-                use:  'babel-loader',
+                // use:  'babel-loader',
+                use: [
+                    {
+                        loader: "babel-loader",
+                        options: { presets: ["@babel/preset-react"] },
+                    },
+                    "ts-loader",
+                ],
                 exclude: /node_modules/,
             },
+            // {
+            //     test: /\.module\.css$/,
+            //     use: [
+            //         'style-loader',
+            //         {
+            //             loader: 'css-loader',
+            //             options: {
+            //                 modules: true,
+            //                 importLoaders: 1,
+            //             },
+            //         },
+            //         ],
+            //     exclude: /node_modules/,
+            // },
+            // {
+            //     test: /\.css$/,
+            //     use: [
+            //         'style-loader',
+            //         'css-loader',
+            //     ],
+            //     exclude: /\.module\.css$/,
+            // },
             {
-                test: /\.module\.css$/,
+                test: /\.css$/i,
                 use: [
-                    'style-loader',
+                    "style-loader",
                     {
-                        loader: 'css-loader',
+                        loader: "css-loader",
                         options: {
-                            modules: true,
                             importLoaders: 1,
+                            modules: true,
                         },
                     },
-                    ],
-                exclude: /node_modules/,
-            },
-            {
-                test: /\.css$/,
-                use: [
-                    'style-loader',
-                    'css-loader',
                 ],
-                exclude: /\.module\.css$/,
             },
         ],
     },
     resolve: {
-        extensions: ['.tsx', '.ts', '.js'],
+        extensions: ['.tsx', '.ts', '.js',".css"],
     },
     mode: 'development',
-    externals: {
-        react: 'react',
-        'react-dom': 'react-dom',
-    },
+    // externals: {
+    //     react: 'react',
+    //     'react-dom': 'react-dom',
+    // },
+    externals: [nodeExternals()],
+    stats: { errorDetails: true },
     plugins: [
         new CopyWebpackPlugin({
             patterns: [
-                { from: 'src/component/*.css', to: '[name][ext]' },
+                // { from: 'src/component/*.css', to: '[name][ext]' },
+                { from: 'src/component/Test.module.css', to: 'Test.module.css' },
+
             ],
         }),
     ],
