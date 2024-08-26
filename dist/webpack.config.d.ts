@@ -23,10 +23,6 @@ export namespace module {
         test: RegExp;
         use: (string | {
             loader: string;
-            options: {
-                importLoaders: number;
-                modules: boolean;
-            };
         })[];
         exclude?: undefined;
     })[];
