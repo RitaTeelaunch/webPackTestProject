@@ -53,13 +53,13 @@ module.exports = {
             {
                 test: /\.css$/i,
                 use: [
-                    "style-loader",
+                    "style-loader","babel-loader",
                     {
                         loader: "css-loader",
-                        options: {
-                            importLoaders: 1,
-                            modules: true,
-                        },
+                        // options: {
+                        //     importLoaders: 1,
+                        //     modules: true,
+                        // },
                     },
                 ],
             },
