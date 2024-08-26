@@ -32,6 +32,7 @@ export namespace resolve {
 }
 export let mode: string;
 export let externals: any[];
+export let target: string;
 export namespace stats {
     let errorDetails: boolean;
 }

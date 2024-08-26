@@ -74,6 +74,7 @@ module.exports = {
     //     'react-dom': 'react-dom',
     // },
     externals: [nodeExternals()],
+    target:"web",
     stats: { errorDetails: true },
     plugins: [
         new CopyWebpackPlugin({
