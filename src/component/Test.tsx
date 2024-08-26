@@ -10,11 +10,11 @@ const Test: React.FC  = () => {
     };
 
     return (
-        <div style={{display:"flex", flexDirection:"column",justifyContent:"start"}}
+        <div style={{display:"flex", flexDirection:"column",justifyContent:"start", marginBottom:"50px"}}
             // className={styles.container}
         >
             <p> Welcome </p>
-            <div style={{display:"flex", flexDirection:"row"}}
+            <div style={{display:"flex", flexDirection:"row", backgroundColor:"red"}}
                 // className={styles.inputGroup}
             >
                 <input
