@@ -1,5 +1,5 @@
 const path = require('path');
-
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
     entry: './src/index.ts',
     output: {
@@ -14,7 +14,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(js|jsx|ts|tsx)?$/,
+                test: /\.(ts|tsx)$/,
                 // use: 'ts-loader',
                 // use: 'babel-loader',
                 use:  'babel-loader',
@@ -45,16 +45,18 @@ module.exports = {
         ],
     },
     resolve: {
-        extensions: ['.tsx', '.ts', '.js', '.jsx'],
-    },
-    devServer: {
-        static: path.resolve(__dirname, 'dist'),
-        compress: true,
-        port: 9000,
+        extensions: ['.tsx', '.ts', '.js'],
     },
     mode: 'development',
     externals: {
         react: 'react',
         'react-dom': 'react-dom',
     },
+    plugins: [
+        new CopyWebpackPlugin({
+            patterns: [
+                { from: 'src/component/*.css', to: '[name][ext]' },
+            ],
+        }),
+    ],
 };
