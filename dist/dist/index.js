@@ -12,9 +12,9 @@
 	else if(typeof define === 'function' && define.amd)
 		define(["react"], factory);
 	else if(typeof exports === 'object')
-		exports["webpack-test-project-rita"] = factory(require("react"));
+		exports["webPackTestProject"] = factory(require("react"));
 	else
-		root["webpack-test-project-rita"] = factory(root["react"]);
+		root["webPackTestProject"] = factory(root["react"]);
 })(self, (__WEBPACK_EXTERNAL_MODULE_react__) => {
 return /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
@@ -26,7 +26,7 @@ return /******/ (() => { // webpackBootstrap
   \********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n\nvar Test = function () {\n    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,\n        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"p\", null, \"welcome\")));\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Test);\n\n\n//# sourceURL=webpack://webpack-test-project-rita/./src/component/Test.tsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n\nvar Test = function () {\n    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,\n        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"p\", null, \"welcome to this one\")));\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Test);\n\n\n//# sourceURL=webpack://webPackTestProject/./src/component/Test.tsx?");
 
 /***/ }),
 
@@ -36,7 +36,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   Test: () => (/* reexport safe */ _component_Test__WEBPACK_IMPORTED_MODULE_0__[\"default\"])\n/* harmony export */ });\n/* harmony import */ var _component_Test__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./component/Test */ \"./src/component/Test.tsx\");\n\n\n\n//# sourceURL=webpack://webpack-test-project-rita/./src/index.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   Test: () => (/* reexport safe */ _component_Test__WEBPACK_IMPORTED_MODULE_0__[\"default\"])\n/* harmony export */ });\n/* harmony import */ var _component_Test__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./component/Test */ \"./src/component/Test.tsx\");\n\n\n\n//# sourceURL=webpack://webPackTestProject/./src/index.ts?");
 
 /***/ }),
 
