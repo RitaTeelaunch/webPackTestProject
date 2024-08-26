@@ -14,7 +14,7 @@ const Test: React.FC  = () => {
             // className={styles.container}
         >
             <p> Welcome </p>
-            <div style={{display:"flex", flexDirection:"row", backgroundColor:"red"}}
+            <div style={{display:"flex", flexDirection:"row", backgroundColor:"red", justifyContent:"space-between", gap:"50p"}}
                 // className={styles.inputGroup}
             >
                 <input
@@ -32,7 +32,7 @@ const Test: React.FC  = () => {
                     // className={styles.input}
                 />
             </div>
-            <button
+            <button style={{display:"flex", paddingTop:"50px"}}
                 // className={`${styles.button} ${isClicked ? styles.buttonClicked : ''}`}
                 onClick={handleButtonClick}
             >
