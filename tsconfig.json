@@ -4,7 +4,7 @@
     "outDir": "./dist/",
     "sourceMap": true,
     "noImplicitAny": true,
-    "module": "es6",
+    "module": "esnext",
     "target": "es5",
     "jsx": "react",
     "allowJs": true,
@@ -12,19 +12,21 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": "./",
     "paths": {
-      "webpack-test-project-rita/*": ["node_modules/webpack-test-project-rita/*"]
-    }
-  }
-//  "compilerOptions": {
-//    "target": "ES6",
-//    "module": "ESNext",
-//    "jsx": "react",
-//    "strict": true,
-//    "esModuleInterop": true,
-//    "skipLibCheck": true,
-//    "forceConsistentCasingInFileNames": true,
-//    "allowSyntheticDefaultImports": true
-//  },
-//  "include": ["src/**/*"],
-//  "exclude": ["node_modules", "dist"]
+      "webpack-test-project-rita/*": [
+        "node_modules/webpack-test-project-rita/*"
+      ],
+      "*": ["node_modules/*", "src/types/*"]
+    },
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+  },
+  "include": [
+    "src/**/*","src","src/**/*.ts", "src/**/*.tsx", "src/styles.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }

@@ -1,7 +1,13 @@
 export interface TestType{
-    container  : {
-    id: string;
-    name: string;
-    someProperty: string | number;
-};
+    message: string;
 }
+
+const styles: {
+    subContainer: string;
+    button: string;
+    buttonClicked: string;
+    input: string;
+    inputGroup: string;
+} = require('./Test.module.css');
+
+export default styles;

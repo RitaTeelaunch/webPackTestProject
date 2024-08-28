@@ -1,88 +1,91 @@
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const nodeExternals = require("webpack-node-externals");
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
     entry: './src/index.ts',
     output: {
         filename: 'index.js',
         path: path.resolve(__dirname, 'dist'),
-        library: {
-            name: 'webpack-test-project-rita',
-            type: 'umd',
-        },
+        library: 'webpack-test-project-rita',
         clean: true,
+        libraryTarget: 'umd',
+        globalObject: 'this',
     },
     module: {
         rules: [
             {
                 test: /\.(ts|tsx)?$/,
-                // use: 'ts-loader',
-                // use: 'babel-loader',
-                // use:  'babel-loader',
                 use: [
-                    {
-                        loader: "babel-loader",
-                        options: { presets: ["@babel/preset-react"] },
-                    },
-                    "ts-loader",
+                    'babel-loader',
+                    'ts-loader',
+                    'css-modules-typescript-loader'
                 ],
                 exclude: /node_modules/,
             },
-            // {
-            //     test: /\.module\.css$/,
-            //     use: [
-            //         'style-loader',
-            //         {
-            //             loader: 'css-loader',
-            //             options: {
-            //                 modules: true,
-            //                 importLoaders: 1,
-            //             },
-            //         },
-            //         ],
-            //     exclude: /node_modules/,
-            // },
-            // {
-            //     test: /\.css$/,
-            //     use: [
-            //         'style-loader',
-            //         'css-loader',
-            //     ],
-            //     exclude: /\.module\.css$/,
-            // },
             {
-                test: /\.css$/i,
+                test: /\.module\.css$/i,
                 use: [
-                    "style-loader","babel-loader",
+                    // MiniCssExtractPlugin.loader,
+                    'style-loader',
+                    // 'css-loader',
+                    'css-modules-typescript-loader',
                     {
-                        loader: "css-loader",
-                        // options: {
-                        //     importLoaders: 1,
-                        //     modules: true,
-                        // },
-                    },
+                        loader: 'css-loader',
+                        options: {
+                            modules: true,
+                            importLoaders: 1,
+                        },
+
+                    }
                 ],
             },
+            {
+                test: /\.css$/i,
+                exclude: /\.module\.css$/,
+                use: [
+                    // MiniCssExtractPlugin.loader,
+                    'style-loader',// form import style inside all library
+                    'css-loader',
+                    'css-loader?modules',
+
+                ],
+            },
+
         ],
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.js',".css"],
     },
-    mode: 'development',
-    // externals: {
-    //     react: 'react',
-    //     'react-dom': 'react-dom',
-    // },
-    externals: [nodeExternals()],
+    mode: 'production',
+    externals: [
+        {
+            // nodeExternals(),
+            react: 'react',
+            'react-dom': 'react-dom',}
+    ],
     target:"web",
     stats: { errorDetails: true },
     plugins: [
+        new MiniCssExtractPlugin
+        ({
+            filename: '[name].css',  // Output CSS file name
+        }),
         new CopyWebpackPlugin({
             patterns: [
-                // { from: 'src/component/*.css', to: '[name][ext]' },
-                { from: 'src/component/Test.module.css', to: 'Test.module.css' },
-
+                { from: 'src/component/*.css', to: '[name][ext]' },
             ],
         }),
+        new CssMinimizerPlugin(),
+        new CleanWebpackPlugin(),
     ],
+    optimization: {
+        minimize: true,
+        minimizer: [
+            new TerserPlugin(),
+            new CssMinimizerPlugin(),
+        ],
+    },
 };
