@@ -1,3 +1,4 @@
 import React from 'react';
-declare const Test: React.FC;
+import { TestType } from './Test.type';
+declare const Test: ({ message }: TestType) => React.JSX.Element;
 export default Test;

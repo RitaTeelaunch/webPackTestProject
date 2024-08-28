@@ -1,7 +1,11 @@
 export interface TestType {
-    container: {
-        id: string;
-        name: string;
-        someProperty: string | number;
-    };
+    message: string;
 }
+declare const styles: {
+    subContainer: string;
+    button: string;
+    buttonClicked: string;
+    input: string;
+    inputGroup: string;
+};
+export default styles;
