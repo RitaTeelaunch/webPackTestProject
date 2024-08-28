@@ -29,8 +29,6 @@ module.exports = {
                 test: /\.module\.css$/i,
                 use: [
                     MiniCssExtractPlugin.loader,
-                    // 'style-loader',
-                    // 'css-loader',
                     'css-modules-typescript-loader',
                     {
                         loader: 'css-loader',
@@ -47,7 +45,7 @@ module.exports = {
                 exclude: /\.module\.css$/,
                 use: [
                     MiniCssExtractPlugin.loader,
-                    'style-loader',// form import style inside all library
+                    'style-loader',
                     'css-loader',
                     'css-loader?modules',
 
@@ -62,7 +60,6 @@ module.exports = {
     mode: 'production',
     externals: [
         {
-            // nodeExternals(),
             react: 'react',
             'react-dom': 'react-dom',}
     ],
@@ -70,7 +67,7 @@ module.exports = {
     stats: { errorDetails: true },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: '[name].css',  // Output CSS file name
+            filename: '[name].css',
         }),
         new CopyWebpackPlugin({
             patterns: [

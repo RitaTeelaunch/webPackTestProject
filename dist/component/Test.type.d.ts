@@ -1,5 +1,7 @@
 export interface TestType {
     message: string;
+    isClicked: boolean;
+    handleButtonClick: () => void;
 }
 declare const styles: {
     subContainer: string;

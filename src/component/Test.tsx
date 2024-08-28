@@ -1,25 +1,15 @@
 'use client'
 import React, { useState } from 'react';
 import styles, {TestType} from './Test.type';
-const Test   = ({message}:TestType) => {
+const Test   = ({message , isClicked, handleButtonClick}:TestType) => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
-    const [isClicked, setIsClicked] = useState(false);
 
-    const handleButtonClick = () => {
-        setIsClicked(!isClicked);
-    };
 
     return (
-        <div
-            // style={{display:"flex", flexDirection:"row",justifyContent:"space-between", marginBottom:"50px", gap:"50px"}}
-            className={styles.subContainer}
-        >
+        <div className={styles.subContainer}>
             <p> Welcome {message}</p>
-            <div
-                // style={{display:"flex", flexDirection:"row", backgroundColor:"red", justifyContent:"space-between", gap:"50px"}}
-                className={styles.inputGroup}
-            >
+            <div className={styles.inputGroup}>
                 <input
                     type="text"
                     placeholder="First Name"
@@ -35,11 +25,8 @@ const Test   = ({message}:TestType) => {
                     className={styles.input}
                 />
             </div>
-            <button
-                // style={{display:"flex", paddingTop:"50px"}}
-                className={`${styles.button} ${isClicked ? styles.buttonClicked : ''}`}
-                onClick={handleButtonClick}
-            >
+            <button className={`${styles.button} ${isClicked ? styles.buttonClicked : ''}`}
+                onClick={handleButtonClick}>
                 {isClicked ? 'Clicked!' : 'Click Me'}
             </button>
         </div>
