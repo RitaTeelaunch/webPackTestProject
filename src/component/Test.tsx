@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react';
-import styles, {TestType} from './Test.type';
-const Test  = ({message}:TestType) => {
+import styles from './Test.module.css';
+const Test: React.FC  = () => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [isClicked, setIsClicked] = useState(false);
@@ -12,10 +12,12 @@ const Test  = ({message}:TestType) => {
 
     return (
         <div
+            // style={{display:"flex", flexDirection:"row",justifyContent:"space-between", marginBottom:"50px", gap:"50px"}}
             className={styles.subContainer}
         >
-            <p> Welcome {message}</p>
+            <p> Welcome </p>
             <div
+                // style={{display:"flex", flexDirection:"row", backgroundColor:"red", justifyContent:"space-between", gap:"50px"}}
                 className={styles.inputGroup}
             >
                 <input
@@ -34,6 +36,7 @@ const Test  = ({message}:TestType) => {
                 />
             </div>
             <button
+                // style={{display:"flex", paddingTop:"50px"}}
                 className={`${styles.button} ${isClicked ? styles.buttonClicked : ''}`}
                 onClick={handleButtonClick}
             >
