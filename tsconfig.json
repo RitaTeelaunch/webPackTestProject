@@ -13,18 +13,12 @@
     "baseUrl": "./",
     "paths": {
       "webpack-test-project-rita/*": ["node_modules/webpack-test-project-rita/*"]
-    }
-  }
-//  "compilerOptions": {
-//    "target": "ES6",
-//    "module": "ESNext",
-//    "jsx": "react",
-//    "strict": true,
-//    "esModuleInterop": true,
-//    "skipLibCheck": true,
-//    "forceConsistentCasingInFileNames": true,
-//    "allowSyntheticDefaultImports": true
-//  },
-//  "include": ["src/**/*"],
-//  "exclude": ["node_modules", "dist"]
+    },
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+  },
+  "include": ["src/**/*","src", "types/**/*"],
+  "exclude": ["node_modules", "dist"]
 }

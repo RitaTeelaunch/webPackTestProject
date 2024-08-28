@@ -28,8 +28,8 @@ module.exports = {
             {
                 test: /\.module\.css$/i,
                 use: [
-                    // MiniCssExtractPlugin.loader,
-                    'style-loader',
+                    MiniCssExtractPlugin.loader,
+                    // 'style-loader',
                     // 'css-loader',
                     'css-modules-typescript-loader',
                     {
@@ -46,7 +46,7 @@ module.exports = {
                 test: /\.css$/i,
                 exclude: /\.module\.css$/,
                 use: [
-                    // MiniCssExtractPlugin.loader,
+                    MiniCssExtractPlugin.loader,
                     'style-loader',// form import style inside all library
                     'css-loader',
                     'css-loader?modules',
@@ -69,9 +69,9 @@ module.exports = {
     target:"web",
     stats: { errorDetails: true },
     plugins: [
-        // new MiniCssExtractPlugin({
-        //     filename: '[name].css',  // Output CSS file name
-        // }),
+        new MiniCssExtractPlugin({
+            filename: '[name].css',  // Output CSS file name
+        }),
         new CopyWebpackPlugin({
             patterns: [
                 { from: 'src/component/*.css', to: '[name][ext]' },
